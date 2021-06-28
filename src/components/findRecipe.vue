@@ -242,7 +242,7 @@
 
       <div v-if="c">
 
-        <h2>{{ getRecipe["title"] }} - {{ getReceipe["id"] }}</h2>
+        <h2>{{ getRecipe["title"] }} - {{ getRecipe["id"] }}</h2>
 
         <img v-bind:src="getRecipe['image']" />
 
@@ -272,13 +272,10 @@ export default {
   data: function () {
     return {
       checkedFood: [],
-      getReceipe: [],
+      getRecipe: [],
       getId: [],
       c: false,
 
-      // apiKeys: 'b3c625b11e164184811ae35c1bb092ee'
-      // 11e91f20e6504df3b2ff755941cfabef
-      //39cfd85581994d5e9e982129cccdb30d
     };
   },
 

@@ -15,15 +15,13 @@
     <router-view />
 
     <div id="footer">
-    <p>Contact:
-      <br>Vivian Petkovsek und Niclas Schweizer
-      <br> RWU - Doggenriedstraße - 88250 Weingarten
-      <br> Tel:
-      <br> 0751 5010
-      <br> E-mail:
-      <br> Vivian.petkovsek@hs-weingarten.de / Niclas.schweizer@hs-weingarten.de
-    </p>
-
+      <p class="key">Contact:</p>
+      <p>Vivian Petkovsek und Niclas Schweizer</p>
+      <p>RWU - Doggenriedstraße - 88250 Weingarten</p>
+      <p class="key">PhoneNr.:</p>
+      <p> 0751 5010</p>
+      <p class="key">Email:</p>
+      <p> Vivian.petkovsek@hs-weingarten.de / Niclas.schweizer@hs-weingarten.de</p>
     </div>
 
     <div class="sidenav">
@@ -46,15 +44,16 @@ export default {
 
 <style>
 body {
+  text-align: center;
   margin: 0px;
   background-color: rgb(206, 228, 231);
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Arimo' ;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
-  color: #2c3e50;
+  color: #000000;
 }
 
 #head {
@@ -100,30 +99,30 @@ body {
   width: 100%;
   text-align: center;
   border-top: black solid 2px;
-  padding: 10px;
   position: static;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 2px;
 }
 #footer a {
   font-weight: bold;
   color: black;
   height: 40px;
-  text-decoration: underline;
-  font-family: "Courier New", Courier, monospace;
+}
+.key{
+  font-weight: bold;
 }
 /* von W3schools */
 .sidenav {
-  height: 70%;
+  height: 100%;
   width: 13%;
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  top: 30%;
-  left: 87%;
-  background-color: rgb(16, 124, 79);
+  top: 20%;
+  float:left;
   overflow-x: hidden;
-  padding-top: 20px;
+  text-align: center;
 }
 .sidenav a {
-  padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;

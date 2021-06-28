@@ -1,6 +1,15 @@
 <template>
   <div class="Finder">
-    <find msg=""/>
+    <div class="Info">
+      <p>
+        On this site, we are able to select ingredients we still have at home.
+        Then by pressing on the search button we will get a recipe wich will
+        include all of thoses ingredients. (sometimes there will be other
+        ingredients includeed in the rcipe)
+      </p>
+    </div>
+
+    <find msg="" />
   </div>
 </template>
 

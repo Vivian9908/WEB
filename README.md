@@ -1,24 +1,23 @@
-# viviundniclas
+Projekt von :
+    - Vivian Petkovsek 33084
+    - Niclas Schweizer 32879
 
-## Project setup
-```
-npm install
-```
+Url für ie Anwenndung in der Cloud :
+    - https://xenodochial-kirch-feaf7c.netlify.app/
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Fremdcodebestandteile : 
+    - sidebar css von w3schools
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Beschreibung der Architektur :
+    Unsere Webseite besteht aus drei Routen, jede dieser Routen hat eine eigene View. Jede View besteht aus Html Code und einem oder mehreren Vue-Componenten. Der Html-Code steht in view während der Coder der Componenten in components steht. Dies führt zu einem übersichtlichen Code, in dem einzelne Elemente sehr leicht gefunden werden können. Außerdem erleichtert es das Arbeiten mit css.
 
-### Lints and fixes files
-```
-npm run lint
-```
+Schritte zum starten :
+    - npm install bzw.
+    - npm run serve
+    (standartverhalten nicht modifiziert)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+API-Keys:
+    b3c625b11e164184811ae35c1bb092ee
+    11e91f20e6504df3b2ff755941cfabef
+    39cfd85581994d5e9e982129cccdb30d
+=> pro API-key stehen ca. 150 requests zur Verfügung

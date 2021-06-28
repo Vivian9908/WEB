@@ -1,6 +1,11 @@
 <template>
   <div class="Calculator">
-    <h1>Recipe price calculator</h1>
+    <div class="Info">
+      <h1>Recipe price calculator</h1>
+
+      <p>On this site, we will be able to calculate the price of a selected recipe.</p>
+      <p bold> You need the Id of the recipe (the id of a rcipe can be found next to the title of a recipe)</p>
+    </div>
 
     <input v-model="Id" placeholder="Id of your recipe" />
     <button @click="IdButtonHandler">Search</button>

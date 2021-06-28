@@ -3,13 +3,13 @@
 
     <h4>Need a laugh? Press the button!</h4>
     <p>{{ getJoke["text"] }} </p>
-    <button @click="JokeButtonHandler">new Joke</button>
+    <button @click="JokeButtonHandler" class="btn">new Joke</button>
 
     <br />
 
     <h4>Hit the button to learn something!</h4>
     <p>{{ getTrivia["text"] }}</p>
-    <button @click="TriviaButtonHandler">new Trivia</button>
+    <button @click="TriviaButtonHandler" class="btn">new Trivia</button>
 
   </div>
 </template>
@@ -53,3 +53,15 @@ export default {
   },
 };
 </script>
+<style scoped>
+  body{
+    text-align: center;
+  }
+ .btn{
+    border: 2px solid #000000;
+    border-radius: 40px;
+    height: 25px;
+    width: 100px;
+  }
+  
+</style>
