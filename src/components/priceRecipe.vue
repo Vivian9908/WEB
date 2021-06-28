@@ -20,7 +20,7 @@
         </table>
       </div>
       <p>Total price: {{ getRecipe["totalCost"] }}</p>
-      <button @click="getButtonHandler(getRecipe['totalCost'])">In $</button>
+      <button @click="getButtonHandler(getRecipe['totalCost'])" class="btn1">In $</button>
       <!-- convert to $ -->
       <div class="Dollar" v-if="total">
         <p>{{ totalCost }} $</p>
