@@ -1,16 +1,17 @@
 <template>
-  <div class="home">
-    <h2>
+  <!-- random recipe -->
+  <div class="recipe">
+    <h3>
       {{ getRecipe.data["recipes"][0]["title"] }} <br />
       Id: {{ getRecipe.data["recipes"][0]["id"] }}
-    </h2>
+    </h3>
 
     <img
       v-bind:src="getRecipe.data['recipes'][0]['image']"
       alt="picture (some recipes come without a picture)"
     />
 
-    <h3>Ingredients:</h3>
+    <h4>Ingredients:</h4>
     <ul>
       <li
         v-for="ingredients in getRecipe.data['recipes'][0][
@@ -23,7 +24,7 @@
       </li>
     </ul>
 
-    <h3>Analyzed Instructions:</h3>
+    <h4>Analyzed Instructions:</h4>
     <ol>
       <li
         v-for="x in getRecipe.data['recipes'][0]['analyzedInstructions'][0][
@@ -36,65 +37,35 @@
       </li>
     </ol>
 
-    <button @click="ButtonHandler" id="btn">Shuffle</button>
+    <button @click="ButtonHandler" id="btnHome">Shuffle</button>
   </div>
 </template>
 
 <script>
-/*eslint-disable*/
-// var ingredientsnumber = 0;
-
-import axios from "axios";
+import axios from 'axios'
 export default {
   data: function () {
     return {
-      getRecipe: [],
-      // apiKey: 'b3c625b11e164184811ae35c1bb092ee'
-      // 11e91f20e6504df3b2ff755941cfabef
-    };
+      getRecipe: []
+    }
   },
 
-  mounted() {
+  mounted () {
     axios
       .get(
-        "https://api.spoonacular.com/recipes/random?apiKey=b3c625b11e164184811ae35c1bb092ee"
+        'https://api.spoonacular.com/recipes/random?apiKey=39cfd85581994d5e9e982129cccdb30d'
       )
-      .then((response) => (this.getRecipe = response));
+      .then((response) => (this.getRecipe = response))
   },
 
   methods: {
     ButtonHandler: function () {
       axios
         .get(
-          "https://api.spoonacular.com/recipes/random?apiKey=b3c625b11e164184811ae35c1bb092ee"
+          'https://api.spoonacular.com/recipes/random?apiKey=39cfd85581994d5e9e982129cccdb30d'
         )
-        .then((response) => (this.getRecipe = response));
-    },
-  },
-};
+        .then((response) => (this.getRecipe = response))
+    }
+  }
+}
 </script>
-<style scoped>
-body {
-  color: #000000;
-  font-weight: bold;
-}
-.home {
-  margin-top: 5%;
-  margin-left: 30%;
-  margin-right: 20%;
-}
-
-#btn {
-  border: 2px solid #000000;
-  border-radius: 40px;
-  height: 25px;
-  width: 100px;
-  margin-left: 50%;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-h2 {
-  text-align: center;
-  margin-left: -25%;
-}
-</style>

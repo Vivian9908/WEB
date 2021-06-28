@@ -9,7 +9,10 @@ Fremdcodebestandteile :
     - sidebar css von w3schools
 
 Beschreibung der Architektur :
-    Unsere Webseite besteht aus drei Routen, jede dieser Routen hat eine eigene View. Jede View besteht aus Html Code und einem oder mehreren Vue-Componenten. Der Html-Code steht in view während der Coder der Componenten in components steht. Dies führt zu einem übersichtlichen Code, in dem einzelne Elemente sehr leicht gefunden werden können. Außerdem erleichtert es das Arbeiten mit css.
+    Unsere Webseite besteht aus drei Routen, jede dieser Routen hat eine eigene View. Jede View besteht aus Html Code und einem oder mehreren Vue-Componenten. Der Html-Code steht in view während der Coder der Componenten in components steht. Dies führt zu einem übersichtlichen Code, in dem einzelne Elemente sehr leicht gefunden werden können. 
+    Außerdem erleichtert es das Arbeiten mit css, welches in der App.vue zu finden ist.
+
+    
 
 Schritte zum starten :
     - npm install bzw.
@@ -21,3 +24,4 @@ API-Keys:
     11e91f20e6504df3b2ff755941cfabef
     39cfd85581994d5e9e982129cccdb30d
 => pro API-key stehen ca. 150 requests zur Verfügung
+

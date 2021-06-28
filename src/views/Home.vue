@@ -7,6 +7,7 @@
     </h1>
 
   <div class="Info">
+
     <p>On this website you can find all necessary information about our site.</p>
 
     <p>Purpose of our application: <br> We of dailybread developed this site to increase the variety
@@ -24,28 +25,13 @@
 </template>
 
 <script>
+// get random recipe
 import ROTD from '@/components/randomRecipe.vue'
 
 export default {
-  name: 'Home',
+  name: 'home',
   components: {
     ROTD
   }
 }
 </script>
-
-<style scope>
-  h1{
-     font-family: "Courier New", Courier, monospace;
-     text-align: center;
-     margin-left: -4%;
-     text-decoration: underline;
-  }
-  .Info{
-    text-align: center;
-    margin-top: 50px;
-    margin-left: -4%;
-
-  }
-
-</style>

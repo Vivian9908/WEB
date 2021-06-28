@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <div id="head">
       <h1>DailyBread</h1>
     </div>
@@ -19,15 +18,16 @@
       <p>Vivian Petkovsek und Niclas Schweizer</p>
       <p>RWU - Doggenriedstraße - 88250 Weingarten</p>
       <p class="key">PhoneNr.:</p>
-      <p> 0751 5010</p>
+      <p>0751 5010</p>
       <p class="key">Email:</p>
-      <p> Vivian.petkovsek@hs-weingarten.de / Niclas.schweizer@hs-weingarten.de</p>
+      <p>
+        Vivian.petkovsek@hs-weingarten.de / Niclas.schweizer@hs-weingarten.de
+      </p>
     </div>
 
     <div class="sidenav">
       <Jokes msg="" />
     </div>
-
   </div>
 </template>
 
@@ -43,13 +43,32 @@ export default {
 </script>
 
 <style>
+/* auf jeder Seite angewandt */
 body {
   text-align: center;
   margin: 0px;
   background-color: rgb(206, 228, 231);
+  color: #000000;
+  text-align: center;
+}
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
+h3 {
+  text-align: center;
+  margin-left: -25%;
+  font-size: 30px;
+}
+h4 {
+  text-decoration: underline;
+}
+.Info {
+  text-align: center;
+  margin-top: 50px;
 }
 #app {
-  font-family: 'Arimo' ;
+  font-family: "Arimo";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
@@ -59,6 +78,7 @@ body {
 #head {
   height: 100px;
   border-bottom: black solid 2px;
+  margin-left: -4%;
 }
 
 #head h1 {
@@ -108,17 +128,18 @@ body {
   color: black;
   height: 40px;
 }
-.key{
+/*personalien im footer*/
+.key {
   font-weight: bold;
 }
 /* von W3schools */
 .sidenav {
   height: 100%;
   width: 13%;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 20%;
-  float:left;
+  float: left;
   overflow-x: hidden;
   text-align: center;
 }
@@ -128,4 +149,91 @@ body {
   color: #818181;
   display: block;
 }
+
+/*Buttons*/
+.btn {
+  border: 2px solid #000000;
+  border-radius: 40px;
+  height: 25px;
+  width: 100px;
+}
+
+#btnHome {
+  border: 2px solid #000000;
+  border-radius: 40px;
+  height: 25px;
+  width: 100px;
+  margin-left: 50%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.btnSearch{
+  border: 2px solid #000000;
+  border-radius: 40px;
+  height: 25px;
+  width: 100px;
+
+}
+.btn1{
+  border: 1px solid #555555;
+  border-radius: 40px;
+  height: 25px;
+  width: 150px;
+}
+.btn2{
+  border: 1px solid #555555;
+  border-radius: 40px;
+  height: 25px;
+  width: 400px;
+}
+/*Textfields */
+#Txtfield1{
+  border: 1px solid #555555;
+  height: 25px;
+  width: 300px;
+}
+#Txtfield2{
+  border: 1px solid #555555;
+  height: 25px;
+  width: 100px;
+}
+/* neu in Home.vue */
+.recipe {
+  margin-top: 5%;
+  margin-left: 30%;
+  margin-right: 20%;
+}
+/* neu in findRecipe.vue */
+.Choice {
+  text-align: center;
+  margin-top: 50px;
+}
+.Suggestedrecipe {
+  text-align: center;
+}
+.List {
+  list-style-position: inside;
+}
+.List li {
+  padding: 20px;
+}
+/*neu in priceRecipe.vue */
+.priceTable {
+  border-collapse: collapse;
+  text-align: center;
+}
+.priceTable td,
+.priceTable th {
+  border-collapse: collapse;
+  border: 1px solid rgb(12, 10, 10);
+  padding: 8px;
+}
+.price {
+  margin-left: 41%;
+  position: relative;
+ }
+.Calculator {
+  padding-bottom: 10px;
+}
+
 </style>

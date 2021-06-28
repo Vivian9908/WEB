@@ -1,38 +1,28 @@
 <template>
   <div class="Calculator">
-    <div class="Info">
-      <h1>Recipe price calculator</h1>
-
-      <p>On this site, we will be able to calculate the price of a selected recipe.</p>
-      <p bold> You need the Id of the recipe (the id of a rcipe can be found next to the title of a recipe)</p>
-    </div>
-
-    <input v-model="Id" placeholder="Id of your recipe" />
-    <button @click="IdButtonHandler">Search</button>
+    <!-- input id -->
+    <input v-model="Id" placeholder="Id of your recipe" id="Txtfield2" /><br />
+    <button @click="IdButtonHandler" class="btnSearch">Search</button>
     <p>{{ Id }}</p>
 
-    <div class="Prices" v-if="f">
+    <!-- get titlle and recipe -->
+    <div v-if="showtitle">
       <h2>{{ NamegetRecipe["title"] }}</h2>
-
-      <h3>Ingrediant Price</h3>
-      <table
-        v-for="ingredients in getRecipe['ingredients']"
-        v-bind:key="ingredients"
-      >
-        <tr>
-          <td>
-            {{ ingredients.name }}
-          </td>
-          <td>
-            {{ ingredients.price }}
-          </td>
-        </tr>
-      </table>
-
+      <div class="price">
+        <table class="priceTable">
+          <tr
+            v-for="ingredients in getRecipe['ingredients']"
+            v-bind:key="ingredients"
+          >
+            <td>{{ ingredients.name }}</td>
+            <td>{{ ingredients.price }} ct</td>
+          </tr>
+        </table>
+      </div>
       <p>Total price: {{ getRecipe["totalCost"] }}</p>
       <button @click="getButtonHandler(getRecipe['totalCost'])">In $</button>
-
-      <div class="Dollar" v-if="z">
+      <!-- convert to $ -->
+      <div class="Dollar" v-if="total">
         <p>{{ totalCost }} $</p>
       </div>
     </div>
@@ -40,21 +30,16 @@
 </template>
 <script>
 /*eslint-disable*/
-// import axios from "axios";
 import axios from "axios";
 export default {
   data: function () {
     return {
       Id: [],
-      getReceipe: [],
-      NamegetReceipe: [],
+      getRecipe: [],
+      NamegetRecipe: [],
       totalCost: [],
-      f: false,
-      z: false,
-
-      // apiKeys: 'b3c625b11e164184811ae35c1bb092ee'
-      // 11e91f20e6504df3b2ff755941cfabef
-      // 39cfd85581994d5e9e982129cccdb30d
+      showtitle: false,
+      total: false,
     };
   },
 
@@ -65,7 +50,7 @@ export default {
         .get(
           "https://api.spoonacular.com/recipes/" +
             id +
-            "/priceBreakdownWidget.json?apiKey=b3c625b11e164184811ae35c1bb092ee"
+            "/priceBreakdownWidget.json?apiKey=39cfd85581994d5e9e982129cccdb30d"
         )
         .then((response) => (this.getRecipe = response.data));
 
@@ -73,17 +58,17 @@ export default {
         .get(
           "https://api.spoonacular.com/recipes/" +
             id +
-            "/information?apiKey=b3c625b11e164184811ae35c1bb092ee"
+            "/information?apiKey=39cfd85581994d5e9e982129cccdb30d"
         )
         .then((response) => (this.NamegetRecipe = response.data));
-      this.f = true;
-      return this.f;
+      this.showtitle = true;
+      return this.showtitle;
     },
 
     getButtonHandler: function (totalCost) {
       this.totalCost = totalCost / 100;
-      this.z = true;
-      return { totalCost, z };
+      this.total = true;
+      return { totalCost, total };
     },
   },
 };
